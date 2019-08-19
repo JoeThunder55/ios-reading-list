@@ -12,6 +12,21 @@ class BookController {
     
     var books: [Book] = []
     
+    
+    
+    var readBooks: [Book]  {
+        let allReadBooks = books.filter { $0.hasBeenRead == true }
+        return allReadBooks
+        }
+    
+    var unreadBooks: [Book]  {
+        let allUnreadBooks = books.filter { $0.hasBeenRead == false }
+        return allUnreadBooks
+    }
+    
+       
+
+    
     var readingListURL: URL?  {
        
         let userDoc = FileManager.default
@@ -52,7 +67,7 @@ class BookController {
     }
     
     func delete() {
-//        let deleteBookEntry = 
+//        let deleteBookEntry =
     }
     
     
